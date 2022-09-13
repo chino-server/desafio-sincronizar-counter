@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import ItemMediaCard from './item'
+import ItemCount from './ItemListContainer/itemCount'
 
 const ItemDetail = () => {
 	const [user, setUser] = useState([]);
@@ -16,7 +17,8 @@ const ItemDetail = () => {
 
 	return (
 		<div className='CharacterList-detail'>
-            {<ItemMediaCard data={user}/>}
+            {<ItemMediaCard data={user} />}
+			 {<ItemCount />}
         </div>
 	);
 };
