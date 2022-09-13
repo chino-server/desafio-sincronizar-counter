@@ -5,6 +5,11 @@ import ItemMediaCard from './item'
 import ItemCount from './ItemListContainer/itemCount'
 
 const ItemDetail = () => {
+	const [add, setAdd]= useState (false)
+	const onAdd = () =>{
+		setAdd (!add)
+
+	}
 	const [user, setUser] = useState([]);
 
 	let { id } = useParams();
@@ -18,7 +23,13 @@ const ItemDetail = () => {
 	return (
 		<div className='CharacterList-detail'>
             {<ItemMediaCard data={user} />}
-			 {<ItemCount />}
+			 {
+				add?
+				   <div>Añadido</div>
+				   :
+				<ItemCount stock ={10} onAdd={onAdd}/>
+				
+			}
         </div>
 	);
 };
