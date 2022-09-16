@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from '@mui/material'
-import { Link } from 'react-router-dom'
 
-const ItemCount = ({onAdd}) => {
+
+const ItemCount = ({addItem, item}) => {
     const [counter, setCounter]= React.useState (0)
     const handlerUpCounter = ()=>{
     let stock = 5
@@ -26,8 +26,9 @@ const ItemCount = ({onAdd}) => {
         <p>{counter}</p>
         <Button size="small" onClick={handlerCounterDown}>Descomprar</Button>
         <br />
+        <Button size="small" onClick = {()=> addItem (item, counter)}>Añadir al carrito</Button>
+        <br />
        
-        <Link to={"/cart"} variant="contained" onClick={onAdd}>Finalizar Compra </Link>
        
 
     </div>

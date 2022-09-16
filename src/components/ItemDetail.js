@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import ItemMediaCard from './item'
 import ItemCount from './ItemListContainer/itemCount'
+import {CartContext } from '../contex/useContex'
+import { Link } from 'react-router-dom'
 
 const ItemDetail = () => {
 	const [add, setAdd]= useState (false)
-	const onAdd = () =>{
-		setAdd (!add)
 
-	}
+	const {addItem}= useContext (CartContext)
+
+	
 	const [user, setUser] = useState([]);
 
 	let { id } = useParams();
@@ -27,9 +29,10 @@ const ItemDetail = () => {
 				add?
 				   <div>Añadido</div>
 				   :
-				<ItemCount stock ={10} onAdd={onAdd}/>
+				<ItemCount item= {user} addItem={addItem}/>
 				
 			}
+		 <Link to={"/cart"} variant="contained">Finalizar Compra </Link>
         </div>
 	);
 };

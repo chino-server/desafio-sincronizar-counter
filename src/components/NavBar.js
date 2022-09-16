@@ -17,6 +17,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Button } from '@mui/material';
+import { CartContext } from '../contex/useContex';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -59,6 +60,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const NavBar = ()=> {
+  const {items}=React.useContext (CartContext)
+  let itemsInCart=0
+  items.map((item)=>{
+    itemsInCart=itemsInCart + item.counter
+  })
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -191,8 +197,8 @@ const NavBar = ()=> {
        
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <ShoppingCartIcon />
+              <Badge badgeContent={itemsInCart} color="error">
+                <ShoppingCartIcon/>
               </Badge>
             </IconButton>
             <IconButton
@@ -200,7 +206,7 @@ const NavBar = ()=> {
               aria-label="show 17 new notifications"
               color="inherit"
             >
-              <Badge badgeContent={17} color="error">
+              <Badge badgeContent={0} color="error">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
