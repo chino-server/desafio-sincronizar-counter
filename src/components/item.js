@@ -7,15 +7,16 @@ import Typography from '@mui/material/Typography';
 import ItemCount from './ItemListContainer/itemCount';
 
 
-const ItemMediaCard = ({data} ,{data2})=> {
+const ItemMediaCard = ({data})=> {
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 500 }}>
       <CardMedia
         component="img"
         height="140"
         image={data.image}
         alt="green iguana"
+       
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
