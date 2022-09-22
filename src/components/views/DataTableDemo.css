@@ -4,9 +4,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: rgb(5, 3, 26);
 }
 
 .datatable-templating-demo .product-image {
     width: 100px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(8, 7, 7, 0.16), 0 3px 6px rgba(69, 210, 23, 0.23);
 }

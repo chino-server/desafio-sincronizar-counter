@@ -43,20 +43,30 @@ const formatCurrency = (value) => {
 const priceBodyTemplate = (rowData) => {
   return formatCurrency(rowData.price);
 }
+const priceSubtotal= (rowData) => {
+  return rowData.counter * rowData.price 
+}
 const ratingBodyTemplate = (rowData) => {
   return <Rating value={rowData.rating} readOnly cancel={false} />;
+
 }
-const footer2 = `In total there are ${items ? items.length : 0} products.`;
+
+
+const footer2 = `Un total de  ${items ? items.length : 0} productos nuevos.`;
  
 
   return (
     <div className="datatable-templating-demo">
       <div className="card">
         <DataTable value={items} header={header2}  footer={footer2}  responsiveLayout="scroll">
-                    <Column field="title" header="Nombre"></Column>
-                    <Column field="price" header="Price" body={priceBodyTemplate}></Column>
+                    <Column field="title" header="Producto"></Column>
                     <Column field="category" header="Category"></Column>
+                    <Column field="price" header="Price c/u" body={priceBodyTemplate}></Column>
                     <Column field="counter" header="Cantidad" ></Column>
+                    <Column field="price" header="Subtotal" body={priceSubtotal}></Column>
+         
+           
+            
         </DataTable>
       </div>
                
