@@ -5,6 +5,7 @@ import ItemDetail from './components/ItemDetail';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contex/useContex';
 import Cart from './components/views/cart';
+import 'primeicons/primeicons.css'
 
 const App= ()=> {
   return (

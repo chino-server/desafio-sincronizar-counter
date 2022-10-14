@@ -1,9 +1,10 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { CartContext } from '../../contex/useContex'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
-import { Button } from 'primereact/button';
 import { Rating } from 'primereact/rating';
+import Button from '@mui/material/Button';
+
 import './DataTableDemo.css';
 
 
@@ -11,13 +12,11 @@ import './DataTableDemo.css';
 
  const Cart = () => {
     const {items, addItem} = useContext (CartContext)
+  
+
+    
     console.log (items)
-    const footer = (
-      <span>
-          <Button label="Save" icon="pi pi-check" />
-          <Button label="Cancel" icon="pi pi-times" className="p-button-secondary ml-2" />
-      </span>
-  );
+    
 
   const header = (item) => {
     console.log (item)
@@ -64,10 +63,15 @@ const footer2 = `Un total de  ${items ? items.length : 0} productos nuevos.`;
                     <Column field="price" header="Price c/u" body={priceBodyTemplate}></Column>
                     <Column field="counter" header="Cantidad" ></Column>
                     <Column field="price" header="Subtotal" body={priceSubtotal}></Column>
-         
-           
-            
         </DataTable>
+        <div>
+            {items.length ==0 ? <Button variant="outlined" style={{marginTop:"50px"}}>Ir a la tienda</Button> 
+            :  <Button variant="outlined" style={{marginTop:"50px"}}>Pagar</Button>}
+        </div>
+
+        
+
+
       </div>
                
     </div>

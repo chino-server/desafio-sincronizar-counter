@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
+import Stack from '@mui/material/Stack';
+
 
 
 const ItemCount = ({addItem, item}) => {
@@ -21,12 +23,13 @@ const ItemCount = ({addItem, item}) => {
 
   return (
     <div>
-
-        <Button size="small" onClick={handlerUpCounter}>Comprar</Button>
+       
+        <Button variant='outlined' size="small" onClick={handlerUpCounter}>Comprar</Button>
         <p>{counter}</p>
-        <Button size="small" onClick={handlerCounterDown}>Descomprar</Button>
-        <br />
-        <Button size="small" onClick = {()=> addItem (item, counter)}>Añadir al carrito</Button>
+        <Button variant='outlined' size="small" onClick={handlerCounterDown}>Quitar</Button>
+        <br></br>
+        <br></br>
+        <Button variant='contained' desabledElevation size="medium" onClick = {()=> addItem (item, counter)}>Añadir al carrito</Button>
         <br />
        
        

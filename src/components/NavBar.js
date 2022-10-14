@@ -16,7 +16,6 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Button } from '@mui/material';
 import { CartContext } from '../contex/useContex';
 
 const Search = styled('div')(({ theme }) => ({
@@ -190,6 +189,7 @@ const NavBar = ()=> {
             <StyledInputBase
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
+              
             />
           </Search>
         

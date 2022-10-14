@@ -10,10 +10,10 @@ import ItemCount from './ItemListContainer/itemCount';
 const ItemMediaCard = ({data})=> {
 
   return (
-    <Card sx={{ maxWidth: 500 }}>
+    <Card sx={{ maxWidth: 500, marginTop:"20px"}}>
       <CardMedia
         component="img"
-        height="140"
+        height="340"
         image={data.image}
         alt="green iguana"
        

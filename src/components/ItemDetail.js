@@ -32,7 +32,9 @@ const ItemDetail = () => {
 				<ItemCount item= {user} addItem={addItem}/>
 				
 			}
-		 <Link to={"/cart"} variant="contained">Finalizar Compra </Link>
+		 <Link to={"/cart"} 
+		 	button variant="contained">Finalizar Compra 
+		 </Link>
         </div>
 	);
 };
