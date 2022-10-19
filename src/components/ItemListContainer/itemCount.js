@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button } from '@mui/material'
 import Stack from '@mui/material/Stack';
+import { InputNumber } from 'primereact/inputnumber';
+
 
 
 
@@ -23,18 +25,19 @@ const ItemCount = ({addItem, item}) => {
 
   return (
     <div>
-       
-        <Button variant='outlined' size="small" onClick={handlerUpCounter}>Comprar</Button>
-        <p>{counter}</p>
-        <Button variant='outlined' size="small" onClick={handlerCounterDown}>Quitar</Button>
-        <br></br>
-        <br></br>
-        <Button variant='contained' desabledElevation size="medium" onClick = {()=> addItem (item, counter)}>Añadir al carrito</Button>
-        <br />
-       
-       
+       <div className="price d-flex flex-row align-items-center">
+          <button className="btn btn-outline-secondary text-uppercase mr-2 px-4"onClick={handlerUpCounter} style={{margin:"10px"}} >Comprar</button>
+            <p>{counter}</p>
+            <button className="btn btn-outline-secondary text-uppercase mr-2 px-4"onClick={handlerUpCounter} style={{margin:"10px"}}>Quitar</button>  
+        
+          
+          <button className="btn btn-outline-success text-uppercase mr-2 px-4" onClick = {()=> addItem (item, counter)}>Añadir al carrito</button>
+          <br />
+       </div>
 
-    </div>
+      
+       
+    </div>  
   )
 }
 

@@ -68,10 +68,10 @@ const ItemListContainer = () => {
                                             
                                               <NavLink className="stretched-link" to={`/detail/${product.id}`}>
                                                     <button className="btn btn-sm m-3 border-primary">
-                                                        <i className="fa fa-arrow-right text-muted"></i>
                                                         <i className="pi pi-arrow-right"></i>
                                                     </button>
                                               </NavLink>
+          
                                               
                                           </div>
                                       </div>
@@ -94,20 +94,10 @@ const ItemListContainer = () => {
 
   return (
     <div className="container">
-    
-          
            
-                  
                 <div className="row"> 
                     <ShowProducts></ShowProducts>
                 </div>
-                
-                
-                
-
-
-                
-        
 
     </div>
      

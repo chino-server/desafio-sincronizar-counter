@@ -5,7 +5,14 @@ import ItemDetail from './components/ItemDetail';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contex/useContex';
 import Cart from './components/views/cart';
-import 'primeicons/primeicons.css'
+
+import PrimeReact from 'primereact/api';
+import 'primeicons/primeicons.css';
+import 'primereact/resources/primereact.css';
+
+
+
+import Shop from './components/Shop';
 
 const App= ()=> {
   return (
@@ -18,6 +25,7 @@ const App= ()=> {
           <Route path='/' element={<ItemListContainer/>}/>
           <Route path='/detail/:id' element= {<ItemDetail/>} />  
           <Route path='/cart' element= {<Cart/>} /> 
+          <Route path='/purchase' element= {<Shop/>}/>
         </Routes>
         </div>
       </Router>

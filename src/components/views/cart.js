@@ -4,6 +4,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Rating } from 'primereact/rating';
 import Button from '@mui/material/Button';
+import { NavLink } from 'react-router-dom';
 
 import './DataTableDemo.css';
 
@@ -65,8 +66,8 @@ const footer2 = `Un total de  ${items ? items.length : 0} productos nuevos.`;
                     <Column field="price" header="Subtotal" body={priceSubtotal}></Column>
         </DataTable>
         <div>
-            {items.length ==0 ? <Button variant="outlined" style={{marginTop:"50px"}}>Ir a la tienda</Button> 
-            :  <Button variant="outlined" style={{marginTop:"50px"}}>Pagar</Button>}
+            {items.length ==0 ? 	 <NavLink className="text-decoration-none text-dark" to={'/'}><Button variant="outlined" style={{marginTop:"50px"}}>Ir a la tienda</Button>  </NavLink>
+            :  	 <NavLink className="text-decoration-none text-dark" to={'/purchase'}> <Button variant="outlined" style={{marginTop:"50px"}}>Pagar</Button> </NavLink>} 
         </div>
 
         
