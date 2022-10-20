@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import { CartContext } from '../../contex/useContex'
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
@@ -12,21 +12,14 @@ import './DataTableDemo.css';
 
 
  const Cart = () => {
-    const {items, addItem} = useContext (CartContext)
+    const {items} = useContext (CartContext)
   
 
     
     console.log (items)
     
 
-  const header = (item) => {
-    console.log (item)
-    return (
-        <React.Fragment>
-            <img alt="flag" src={item.image}  />
-        </React.Fragment>
-    );
-}
+
 
 const header2 = (
   <div className="table-header">
@@ -34,9 +27,7 @@ const header2 = (
       <Button icon="pi pi-refresh" />
   </div>
 );
-const imageBodyTemplate = (rowData) => {
-  return <img src={rowData.image} />;
-}
+
 const formatCurrency = (value) => {
   return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
 }

@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './contex/useContex';
 import Cart from './components/views/cart';
 
-import PrimeReact from 'primereact/api';
+
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.css';
 

@@ -8,8 +8,7 @@ import {CartContext } from '../contex/useContex'
 import { NavLink } from 'react-router-dom'
 
 const ItemDetail = () => {
-	const [add, setAdd]= useState (false)
-
+	
 	const {addItem}= useContext (CartContext)
 
 	
